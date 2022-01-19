@@ -1,15 +1,11 @@
 import MyPosts from './MyPosts/MyPosts';
 import classes from './Profile.module.css';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
     return (
         <div>
-        <div>
-          <img src="https://wonder-day.com/wp-content/uploads/2020/04/wonder-day-images-rainbow-37-1024x576.jpg" />
-        </div>
-        <div>
-           avatar+desc
-        </div>
+        <ProfileInfo />
         <MyPosts />
       </div>
     );

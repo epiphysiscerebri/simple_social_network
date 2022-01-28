@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
+
 const MyPosts = (props) => {
 
   let newPostElement = React.createRef();
@@ -9,9 +10,10 @@ const MyPosts = (props) => {
   let postsElements = props.posts.map( post => <Post message={post.message} like={post.like} />)
 
   let addPost = () => {
-    alert(newPostElement.current.value);
+    let text = newPostElement.current.value;
+    props.addMessage(text);
+    newPostElement.current.value = '';
   }
-
 
   return (
     <div className={classes.postBlock}>

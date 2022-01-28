@@ -1,3 +1,5 @@
+import {rerenderEntiredTree} from "./render";
+
 let state = {
   dialogsComponent: {
     messages: [
@@ -25,5 +27,12 @@ let state = {
   },
   settComponent: {},
 };
+
+export let addMessage = (postMessage) => {
+  let newPost= {id: 3, message: postMessage, like: "1"};
+  state.profileComponent.posts.push(newPost);
+  rerenderEntiredTree(state);
+}
+
 
 export default state;

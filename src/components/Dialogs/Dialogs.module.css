@@ -1,10 +1,13 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
-}   
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr;
+    grid-template-areas: 'dialogItems messages';
+}
 
 .dialogsItem {
- padding: 10px;
+    padding: 10px;
+    grid-area: dialogItems;
 }
 
 .dialogsItem .active {
@@ -14,5 +17,19 @@
 .messages .message {
     padding: 10px;
     color: white;
+    grid-area: messages;
 }
 
+.textArea {
+    display: block;
+    width: 250px;
+    height: 50px;
+    margin-left: 545px;    
+}
+
+.button {
+    display: block;
+    width: 100px;
+    height: 30px;
+    margin-left: 703px;
+}

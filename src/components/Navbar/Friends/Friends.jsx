@@ -4,7 +4,7 @@ const Friends = (props) => {
   return (
     <div>
       <div className={classes.friends}>
-        <div>{props.name}</div>
+        <div className={classes.name}>{props.name}</div>
       </div>
     </div>
   );

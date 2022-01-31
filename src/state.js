@@ -1,4 +1,4 @@
-import {rerenderEntiredTree} from "./render";
+let rerenderEntiredTree = () => {};
 
 let state = {
   dialogsComponent: {
@@ -30,28 +30,32 @@ let state = {
   settComponent: {},
 };
 
-export let addPost = () => {
+export const addPost = () => {
   let newPost= {id: 3, message: state.profileComponent.newPostText , like: "1"};
   state.profileComponent.posts.push(newPost);
   state.profileComponent.newPostText = '';
   rerenderEntiredTree(state);
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
   state.profileComponent.newPostText= newText;
   rerenderEntiredTree(state);
 }
 
-export let addMessage = () => {
+export const addMessage = () => {
   let newMessage= {id: 4, message: state.dialogsComponent.newMessageText};
   state.dialogsComponent.messages.push(newMessage);
   state.dialogsComponent.newMessageText = '';
   rerenderEntiredTree(state);
 }
 
-export let updateNewMessageText = (newText) => {
+export const updateNewMessageText = (newText) => {
   state.dialogsComponent.newMessageText= newText;
   rerenderEntiredTree(state);
 }
+
+export const subscribe = (observer) => {
+  rerenderEntiredTree = observer;
+};
 
 export default state;
